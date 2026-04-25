@@ -65,6 +65,100 @@
         .bar {height: 6px;background: rgba(255,255,255,0.1);border-radius: 10px;margin-top: 6px;overflow: hidden;}
         .bar div {height: 100%;background: linear-gradient(90deg,#38bdf8,#a855f7);border-radius: 10px;animation: growBar 1.5s ease;}        
         @keyframes growBar {from {width: 0;}}
+        * {box-sizing: border-box}
+        img {max-width: 100%;height: auto;}
+        @media (max-width: 768px) {
+            .nav-container {flex-direction: column;align-items: center;gap: 10px;}
+            .nav-links {justify-content: center;gap: 10px;}
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 100px 15px 60px;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            .hero-img img {
+                width: 220px;
+                margin-top: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 26px;
+            }
+            .hero-text h3 {
+                font-size: 16px;
+            }
+            .btn {
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== EXPERIENCE & PROJECTS ========== */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+/* ========== SKILLS SECTION ========== */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-track img {
+        width: 45px;
+    }
+}
+
+/* ========== CONTACT SECTION ========== */
+@media (max-width: 600px) {
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ========== EXTRA SMALL DEVICES ========== */
+@media (max-width: 400px) {
+    body {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
     </style>
 </head>
 
