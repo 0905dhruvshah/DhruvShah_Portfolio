@@ -159,6 +159,41 @@
         align-items: center;
     }
 }
+        /* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #38bdf8;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        width: 220px;
+        flex-direction: column;
+        background: #020617;
+        padding: 20px;
+        transition: 0.3s;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        right: 10px;
+    }
+}
     </style>
 </head>
 
@@ -166,6 +201,7 @@
     <nav>
         <div class="nav-container">
             <b>Dhruv Shah</b>
+            <div class="menu-toggle" id="menuToggle">☰</div> 
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
@@ -510,5 +546,13 @@
             });
         });
     </script>
+    <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
 </body>
 </html>
