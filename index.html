@@ -194,6 +194,88 @@
         right: 10px;
     }
 }
+
+        /* ========== CERTIFICATION ========== */
+        .certification-section {padding-top: 30px;}
+        .section-heading {margin-bottom: 25px;}
+        .section-eyebrow {font-size: 11px;letter-spacing: 2px;color:#a855f7;font-weight:700;}
+        .section-heading h2 {margin: 8px 0 8px;}
+        .section-heading p {color:#94a3b8;max-width:720px;line-height:1.6;margin:0;}
+
+        .certification-card {
+            position:relative;
+            display:grid;
+            grid-template-columns:280px 1fr;
+            gap:35px;
+            align-items:center;
+            overflow:hidden;
+            padding:35px;
+            border-radius:22px;
+            border:1px solid rgba(56,189,248,.25);
+            background:
+                radial-gradient(circle at 12% 50%, rgba(56,189,248,.12), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(168,85,247,.13), transparent 32%),
+                linear-gradient(145deg, rgba(15,23,42,.98), rgba(2,6,23,.98));
+            box-shadow:0 20px 60px rgba(0,0,0,.28);
+        }
+        .certification-card::before {
+            content:"";
+            position:absolute;
+            inset:0;
+            border-radius:22px;
+            padding:1px;
+            background:linear-gradient(120deg,rgba(56,189,248,.55),transparent 45%,rgba(168,85,247,.45));
+            -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+            -webkit-mask-composite:xor;
+            mask-composite:exclude;
+            pointer-events:none;
+        }
+        .cert-badge-wrap {position:relative;display:flex;justify-content:center;align-items:center;min-height:240px;}
+        .cert-glow {
+            position:absolute;width:210px;height:210px;border-radius:50%;
+            background:radial-gradient(circle,rgba(56,189,248,.25),transparent 68%);
+            filter:blur(8px);
+        }
+        .cert-badge {
+            position:relative;width:210px;height:210px;object-fit:contain;
+            filter:drop-shadow(0 15px 22px rgba(0,0,0,.4));
+            transition:transform .35s ease,filter .35s ease;
+        }
+        .certification-card:hover .cert-badge {
+            transform:translateY(-7px) rotate(2deg);
+            filter:drop-shadow(0 20px 28px rgba(56,189,248,.2));
+        }
+        .cert-content h3 {font-size:30px;margin:12px 0 5px;color:#f8fafc;}
+        .cert-provider {color:#38bdf8;font-weight:600;margin:0 0 15px;}
+        .cert-content > p:not(.cert-provider) {color:#94a3b8;line-height:1.7;max-width:720px;}
+        .verified-pill {
+            display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;
+            background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);
+            color:#86efac;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+        }
+        .verified-dot {width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px rgba(74,222,128,.8);}
+        .cert-highlights {display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 24px;}
+        .cert-highlights span {
+            padding:8px 11px;border-radius:8px;background:rgba(255,255,255,.04);
+            border:1px solid rgba(255,255,255,.07);color:#cbd5e1;font-size:12px;
+        }
+        .cert-btn {
+            background:linear-gradient(90deg,#38bdf8,#a855f7);
+            color:#020617;font-weight:800;border:none;
+            box-shadow:0 8px 24px rgba(56,189,248,.16);
+            transition:transform .25s ease,box-shadow .25s ease;
+        }
+        .cert-btn:hover {transform:translateY(-2px);box-shadow:0 12px 28px rgba(168,85,247,.22);}
+
+        @media(max-width:700px) {
+            .certification-card {grid-template-columns:1fr;text-align:center;padding:28px 20px;gap:10px;}
+            .cert-badge-wrap {min-height:200px;}
+            .cert-badge {width:175px;height:175px;}
+            .cert-content h3 {font-size:24px;}
+            .cert-highlights {justify-content:center;}
+            .cert-btn {width:auto;display:inline-block;}
+        }
+
     </style>
 </head>
 
@@ -207,6 +289,7 @@
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#certification" class="nav-link">Certification</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
@@ -214,14 +297,14 @@
     <div class="hero">
         <div class="hero-text">
             <h1>Dhruv Shah</h1>
-            <h3>Full-Stack .NET Developer | AI-Driven Engineer</h3>
-            <p>Senior .NET Developer with 4+ years of experience building scalable applications.</p>
+            <h3>Claude Certified Architect – Foundation | AI Solutions Engineer | Sr. .NET Full Stack Developer</h3>
+            <p>Building scalable, secure, and AI-powered applications that solve real-world business challenges.</p>
             <a href="DhruvShah_Resume.pdf" class="btn primary">View Resume</a>
             <a href="https://linkedin.com/in/dhruvshah0905" class="btn secondary">LinkedIn</a>
         </div>
 
         <div class="hero-img">
-            <img src="Dhruv.png">
+            <img src="DhruvShah.jpeg" alt="Dhruv Shah - AI Solutions Engineer and .NET Full Stack Developer">
         </div>
     </div>
     <section id="about">
@@ -229,18 +312,27 @@
             <div class="about-left">
                 <h2>Professional Summary</h2>
                 <div class="card">
-                    Experienced .NET Developer with 4+ years of expertise in building scalable web applications using ASP.NET
-                    Core, MVC, C#, and Entity Framework. Proficient in SQL Server, LINQ, and RESTful APIs, with hands-on
-                    experience in frontend technologies like HTML, CSS, JavaScript, and jQuery. Skilled in authentication
-                    (OAuth2, JWT) and cloud services (Azure/AWS). Passionate about delivering high-quality, optimized solutions
-                    using clean architecture, modern development practices, and AI-assisted tools like Claude AI and ChatGPT to
-                    improve productivity and code quality.
+                    <p>I'm a <strong>Claude Certified Architect – Foundation</strong> and a .NET Full Stack Developer passionate
+                    about designing and building AI-powered applications that solve real-world business challenges.</p>
+
+                    <p>With over 5 years of experience in software development, I specialize in building scalable, secure,
+                    and high-performance applications using <strong>ASP.NET Core, ASP.NET MVC, C#, Entity Framework Core,
+                    SQL Server, and RESTful APIs</strong>. My frontend experience includes HTML, CSS, JavaScript, jQuery,
+                    and modern web development practices.</p>
+
+                    <p>As a Claude Certified Architect – Foundation, I have demonstrated foundational expertise in applying
+                    Claude and AI concepts to real-world scenarios and designing practical AI-driven solutions. I enjoy
+                    exploring <strong>Agentic AI, LLM-powered applications, AI automation, and intelligent enterprise
+                    solutions</strong>.</p>
+
+                    <p>I believe in continuous learning, embracing emerging technologies, and building impactful software
+                    that delivers measurable value.</p>
                 </div>
             </div>
             <div class="about-right">
                 <div class="stats-grid">
                     <div class="stat">
-                        <h1>4+</h1>
+                        <h1>5+</h1>
                         <p>Years Experience</p>
                     </div>
 
@@ -354,6 +446,48 @@
                     <li>Optimized API calls and error handling</li>
                     <li>Improved transaction efficiency</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="certification" class="certification-section">
+        <div class="section-heading">
+            <span class="section-eyebrow">PROFESSIONAL CREDENTIAL</span>
+            <h2>Claude Certified Architect</h2>
+            <p>Verified certification demonstrating foundational knowledge of architecting AI-powered solutions with Claude.</p>
+        </div>
+
+        <div class="certification-card">
+            <div class="cert-badge-wrap">
+                <div class="cert-glow"></div>
+                <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect – Foundation badge" class="cert-badge">
+            </div>
+
+            <div class="cert-content">
+                <div class="verified-pill">
+                    <span class="verified-dot"></span>
+                    Verified Credential
+                </div>
+                <h3>Claude Certified Architect – Foundation</h3>
+                <p class="cert-provider">Anthropic • Credly</p>
+                <p>
+                    A professional credential recognizing foundational capability in Claude-based AI solution architecture,
+                    AI-assisted development, and practical application of Claude in real-world solution design.
+                </p>
+
+                <div class="cert-highlights">
+                    <span>✓ AI Solution Architecture</span>
+                    <span>✓ Claude & LLM Concepts</span>
+                    <span>✓ Agentic AI</span>
+                    <span>✓ AI-Powered Applications</span>
+                </div>
+
+                <a class="btn cert-btn"
+                   href="https://www.credly.com/badges/3bae78f6-0830-4ba3-9d5a-1b33cdf3dc1c/public_url"
+                   target="_blank" rel="noopener noreferrer">
+                    View Verified Certificate ↗
+                </a>
             </div>
         </div>
     </section>
