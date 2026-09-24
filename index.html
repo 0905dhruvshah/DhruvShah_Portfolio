@@ -1,777 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhruv Shah | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dhruv Shah — Senior .NET Full Stack Developer building scalable enterprise applications and AI-powered solutions.">
+<meta name="theme-color" content="#070b14">
+<title>Dhruv Shah | .NET Full Stack & AI Solutions Engineer</title>
 
-    <style>
-        html {scroll-behavior: smooth;}
-        body {margin: 0;font-family: 'Segoe UI', sans-serif;background: radial-gradient(circle at top, #0f172a, #020617);color: #e2e8f0;}
-        nav {position: fixed;width: 100%;top: 0;background: rgba(2,6,23,0.9);backdrop-filter: blur(10px);z-index: 1000;}
-        .nav-container {max-width: 1100px;margin: auto;display: flex;justify-content: space-between;padding: 15px 20px;}
-        .nav-links {display: flex;gap: 15px;flex-wrap: wrap;}
-        .nav-links a {color: #cbd5f5;text-decoration: none;}
-        .nav-links a:hover {color: #38bdf8;}
-        .hero {display: flex;justify-content: space-between;align-items: center;padding: 120px 20px 80px;max-width: 1100px;margin: auto;}
-        .hero-text h1 {color: #38bdf8;font-size: 48px;}
-        .hero-text p {color: #94a3b8;margin-top: 10px;}
-        .hero-img img {width: 300px;border-radius: 20px;}
-        .btn {margin-top: 15px;padding: 10px 20px;border-radius: 6px;display: inline-block;text-decoration: none;}
-        .primary {background: #38bdf8;color: black;}
-        .secondary {border: 1px solid #38bdf8;color: #38bdf8;}        
-        section {max-width: 1100px;margin: auto;            }
-        h2 {color: #38bdf8;}        
-        .card {background: rgba(15,23,42,0.8);padding: 20px;border-radius: 10px;margin-bottom: 20px;}
-        ul {padding-left: 20px;}
-        li {margin-bottom: 8px;}        
-        .grid {display: grid;grid-template-columns: repeat(auto-fit,minmax(280px,1fr));gap: 20px;}        
-        .stats {display: grid;grid-template-columns: repeat(auto-fit,minmax(200px,1fr));gap: 20px;}
-        .stat {background: #0f172a;padding: 25px;border-radius: 10px;text-align: center;       }
-        .stat h1 {background: linear-gradient(90deg,#38bdf8,#a855f7);-webkit-background-clip: text;color: transparent;}
-        .logo-slider {overflow: hidden;width: 100%;position: relative;}
-        .logo-track {display: flex;gap: 40px;width: max-content;animation: scroll 25s linear infinite;}            
-        .logo-track img {width: 55px;opacity: 0.8;transition: 0.3s;}
-        .logo-track img:hover {transform: scale(1.2);opacity: 1;}        
-        @keyframes scroll {from {transform: translateX(0);}to {transform: translateX(-50%);}}
-        @media(max-width:900px) {.hero {flex-direction: column;text-align: center;}}
-        .about-container {display: grid;grid-template-columns: 60% 40%;gap: 30px;align-items: stretch;}
-        .about-left h2 {margin-bottom: 15px;}        
-        .stats-grid {display: grid;grid-template-columns: repeat(2, 1fr);gap: 15px;height: 100%;}        
-        .stat {background: linear-gradient(145deg, #0f172a, #020617);padding: 25px;border-radius: 12px;text-align: center;border: 1px solid rgba(255,255,255,0.05);transition: 0.3s;}
-        .stat h1 {font-size: 32px;background: linear-gradient(90deg,#38bdf8,#a855f7);-webkit-background-clip: text;color: transparent;}
-        .stat p {color: #94a3b8;margin-top: 5px;}
-        .stat:hover {transform: translateY(-5px);border-color: #38bdf8;}
-        @media(max-width:900px) {.about-container {grid-template-columns: 1fr;}}
-        .contact-desc {color: #94a3b8;margin: 10px 0 30px;max-width: 600px;line-height: 1.6;}
-        .contact-items {display: flex;flex-direction: column;gap: 25px;}        
-        .contact-item {display: flex;align-items: flex-start;gap: 15px;}            
-        .contact-item .icon {font-size: 22px;margin-top: 3px;color: #38bdf8;}            
-        .contact-item h3 {margin: 0;font-size: 16px;color: #e2e8f0;}
-        .contact-item p {margin: 5px 0 0;color: #94a3b8;font-size: 14px;}            
-        .contact-item a {color: #38bdf8;text-decoration: none;}
-        .contact-item a:hover {text-decoration: underline;}
-        .nav-link {position: relative;padding-bottom: 5px;}
-        .nav-link::after {content: "";position: absolute;left: 0;bottom: 0;width: 0%;height: 2px;background: #38bdf8;transition: width 0.3s ease;}
-        .nav-link:hover::after {width: 100%;}
-        .nav-link.active {color: #38bdf8;}
-        .nav-link.active::after {width: 100%;}
-        .skills-grid {margin-top: 50px;display: grid;grid-template-columns: repeat(auto-fit, minmax(280px,1fr));gap: 25px;}
-        .skill-card {background: linear-gradient(145deg,#0f172a,#020617);padding: 20px;border-radius: 14px;border: 1px solid rgba(255,255,255,0.05);transition: 0.3s;}
-        .skill-card:hover {transform: translateY(-6px);border-color: #38bdf8;}
-        .skill-card h3 {margin-bottom: 15px;font-size: 18px;}
-        .skill {margin-bottom: 15px;}
-        .skill span {font-size: 14px;color: #cbd5f5;}
-        .bar {height: 6px;background: rgba(255,255,255,0.1);border-radius: 10px;margin-top: 6px;overflow: hidden;}
-        .bar div {height: 100%;background: linear-gradient(90deg,#38bdf8,#a855f7);border-radius: 10px;animation: growBar 1.5s ease;}        
-        @keyframes growBar {from {width: 0;}}
-        * {box-sizing: border-box}
-        img {max-width: 100%;height: auto;}
-        @media (max-width: 768px) {
-            .nav-container {flex-direction: column;align-items: center;gap: 10px;}
-            .nav-links {justify-content: center;gap: 10px;}
-        }
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 100px 15px 60px;
-            }
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            .hero-img img {
-                width: 220px;
-                margin-top: 20px;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 26px;
-            }
-            .hero-text h3 {
-                font-size: 16px;
-            }
-            .btn {
-                display: block;
-                width: 100%;
-                margin-top: 10px;
-            }
-        }
-@media (max-width: 900px) {
-    .about-container {
-        grid-template-columns: 1fr;
-    }
+<style>
+:root{
+  --bg:#070b14;
+  --bg2:#0b1120;
+  --surface:rgba(15,23,42,.72);
+  --surface2:rgba(20,30,50,.72);
+  --text:#e8eef8;
+  --muted:#91a0b7;
+  --line:rgba(148,163,184,.14);
+  --cyan:#38bdf8;
+  --violet:#a78bfa;
+  --green:#4ade80;
+  --amber:#fbbf24;
+  --shadow:0 24px 70px rgba(0,0,0,.34);
+  --radius:22px;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%,rgba(56,189,248,.10),transparent 28%),
+    radial-gradient(circle at 85% 12%,rgba(167,139,250,.10),transparent 30%),
+    linear-gradient(180deg,var(--bg),#050811 65%,#070b14);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; opacity:.22; z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:42px 42px;
+}
+a{color:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+section{padding:105px 0;scroll-margin-top:85px}
+.section-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.section-kicker::before{content:"";width:26px;height:1px;background:var(--cyan)}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em}
+.section-head{max-width:760px;margin-bottom:38px}
+.section-head h2{margin-top:12px}
+.section-head p{color:var(--muted);margin:15px 0 0}
 
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  background:rgba(5,8,17,.70);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;transition:.3s;
+}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(5,8,17,.88)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;letter-spacing:-.02em}
+.brand-mark{
+  width:35px;height:35px;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--cyan),var(--violet));color:#06101c;
+  box-shadow:0 8px 25px rgba(56,189,248,.2)
+}
+.nav-links{display:flex;gap:25px;align-items:center}
+.nav-links a{font-size:13px;color:#aebbd0;text-decoration:none;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{padding:9px 14px;border:1px solid rgba(56,189,248,.3);border-radius:10px}
+.menu-toggle{display:none;border:0;background:none;color:white;font-size:25px}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;padding-top:95px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}
+.availability{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;
+  border:1px solid rgba(74,222,128,.2);background:rgba(74,222,128,.07);
+  color:#9ae6b4;font-size:12px;font-weight:700
+}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 14px var(--green)}
+.hero h1{font-size:clamp(46px,7vw,78px);letter-spacing:-.055em;margin:18px 0 14px}
+.gradient{background:linear-gradient(100deg,#fff 15%,var(--cyan) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-role{font-size:clamp(19px,2.2vw,26px);font-weight:700;color:#c8d3e5;max-width:800px}
+.hero-copy{font-size:17px;color:var(--muted);max-width:700px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;
+  border-radius:12px;text-decoration:none;font-weight:800;font-size:14px;
+  border:1px solid var(--line);transition:.25s;cursor:pointer
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),#7dd3fc);color:#06101c;border-color:transparent;box-shadow:0 12px 30px rgba(56,189,248,.16)}
+.btn-ghost{background:rgba(255,255,255,.025);color:#dce7f6}
+.hero-proof{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.pill{padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.035);border:1px solid var(--line);color:#b9c6d9;font-size:12px}
+.hero-panel{
+  position:relative;padding:26px;border-radius:28px;border:1px solid rgba(56,189,248,.2);
+  background:
+    radial-gradient(circle at 15% 15%,rgba(56,189,248,.15),transparent 30%),
+    radial-gradient(circle at 90% 85%,rgba(167,139,250,.12),transparent 35%),
+    rgba(10,16,29,.82);
+  box-shadow:var(--shadow);overflow:hidden
+}
+.hero-panel::after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-80px;top:-80px;
+  border:1px solid rgba(56,189,248,.12);box-shadow:0 0 0 30px rgba(56,189,248,.025),0 0 0 60px rgba(56,189,248,.018)
+}
+.panel-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.terminal-dots{display:flex;gap:6px}.terminal-dots span{width:8px;height:8px;border-radius:50%;background:#334155}
+.panel-label{font-size:11px;color:#71819a;letter-spacing:.12em;text-transform:uppercase}
+.code{
+  font-family:"SFMono-Regular",Consolas,monospace;font-size:12px;color:#cbd5e1;
+  background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:15px;
+  overflow:auto
+}
+.code .c{color:#64748b}.code .k{color:#7dd3fc}.code .s{color:#86efac}.code .p{color:#c4b5fd}
+.arch{margin-top:17px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.arch-item{padding:12px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.arch-item small{display:block;color:#6f8099;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.arch-item strong{display:block;margin-top:3px;font-size:13px}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stat{
+  padding:22px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.025);
+}
+.stat strong{display:block;font-size:31px;letter-spacing:-.04em;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:12px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:linear-gradient(145deg,rgba(15,23,42,.72),rgba(8,13,24,.72));
+  box-shadow:0 15px 45px rgba(0,0,0,.12);padding:27px
+}
+.card p{color:var(--muted);margin:0 0 15px}.card p:last-child{margin-bottom:0}
+.focus-list{display:grid;gap:11px}
+.focus{
+  display:flex;gap:13px;align-items:flex-start;padding:14px;border-radius:14px;
+  border:1px solid var(--line);background:rgba(255,255,255,.025)
+}
+.focus-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:rgba(56,189,248,.1);color:var(--cyan)}
+.focus strong{font-size:14px}.focus small{display:block;color:var(--muted);margin-top:2px}
+
+/* EXPERIENCE */
+.timeline{position:relative;margin-top:20px}
+.timeline::before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:linear-gradient(var(--cyan),rgba(167,139,250,.15))}
+.job{position:relative;padding-left:52px;margin-bottom:20px}
+.job-dot{position:absolute;left:9px;top:27px;width:17px;height:17px;border-radius:50%;background:#07101d;border:4px solid var(--cyan);box-shadow:0 0 18px rgba(56,189,248,.25)}
+.job-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.job-title{font-size:19px}.company{color:var(--cyan);font-weight:750}
+.date{white-space:nowrap;color:#7f90a8;font-size:12px;padding:6px 9px;border:1px solid var(--line);border-radius:8px}
+.job ul{margin:17px 0 0;padding-left:18px;color:var(--muted)}.job li{margin:8px 0}
+
+/* PROJECTS */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{
+  position:relative;overflow:hidden;min-height:330px;display:flex;flex-direction:column;
+  transition:.3s
+}
+.project:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.3)}
+.project.featured{grid-column:span 2;min-height:380px}
+.project-number{font-family:monospace;color:#53657d;font-size:12px}
+.project h3{font-size:23px;margin:14px 0 8px}
+.project p{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}
+.tag{font-size:10px;padding:5px 8px;border-radius:7px;color:#c8d5e8;background:rgba(255,255,255,.045);border:1px solid var(--line)}
+.project-footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;color:#7890aa;font-size:11px}
+.project-glow{position:absolute;width:150px;height:150px;border-radius:50%;right:-80px;bottom:-80px;background:rgba(56,189,248,.12);filter:blur(10px)}
+
+/* AI SECTION */
+.ai-wrap{
+  border:1px solid rgba(167,139,250,.23);border-radius:28px;padding:34px;
+  background:
+   radial-gradient(circle at 85% 15%,rgba(167,139,250,.12),transparent 30%),
+   radial-gradient(circle at 10% 90%,rgba(56,189,248,.09),transparent 30%),
+   rgba(10,15,28,.75)
+}
+.ai-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
+.ai-copy p{color:var(--muted)}
+.ai-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.ai-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
+.flow-box{
+  padding:17px 12px;text-align:center;border:1px solid var(--line);border-radius:14px;
+  background:rgba(255,255,255,.03);font-size:12px;font-weight:750
+}
+.flow-box small{display:block;color:#70839d;font-weight:500;margin-top:4px}
+.flow-arrow{display:grid;place-items:center;color:var(--cyan);font-size:18px}
+.flow-row{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:9px;align-items:center}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-card h3{font-size:16px;margin-bottom:17px}
+.skill-line{margin:12px 0}.skill-top{display:flex;justify-content:space-between;font-size:12px;color:#c5d1e2}
+.skill-level{height:5px;border-radius:99px;background:rgba(255,255,255,.07);margin-top:7px;overflow:hidden}
+.skill-level span{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:inherit;transform-origin:left;animation:grow 1.2s ease both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.note{font-size:11px;color:#6e8098;margin-top:18px}
+
+/* CERT */
+.cert{
+  display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:center;
+  border:1px solid rgba(56,189,248,.24);border-radius:28px;padding:28px;
+  background:radial-gradient(circle at 15% 50%,rgba(56,189,248,.11),transparent 28%),rgba(12,18,32,.78)
+}
+.cert-badge{width:155px;height:155px;object-fit:contain;filter:drop-shadow(0 15px 25px rgba(56,189,248,.16));transition:.35s}
+.cert:hover .cert-badge{transform:translateY(-5px) rotate(2deg)}
+.verified{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(74,222,128,.08);color:#8ce5a7;border:1px solid rgba(74,222,128,.18);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.cert h3{font-size:27px;margin:13px 0 5px}.cert-provider{color:var(--cyan);font-weight:700}.cert p{color:var(--muted)}
+.cert-tags{display:flex;flex-wrap:wrap;gap:7px;margin:17px 0}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:18px}
+.contact-items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-item{padding:17px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025)}
+.contact-item small{display:block;color:#6d7f97;font-size:10px;text-transform:uppercase;letter-spacing:.1em}.contact-item strong{display:block;margin-top:3px;font-size:13px;word-break:break-word}.contact-item a{text-decoration:none}
+.cta{
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:100%;background:linear-gradient(145deg,rgba(56,189,248,.08),rgba(167,139,250,.07));
+}
+.cta p{color:var(--muted)}footer{padding:35px 0;border-top:1px solid var(--line);color:#65758c;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+  .hero-grid,.about-grid,.ai-grid,.contact-grid{grid-template-columns:1fr}
+  .hero{min-height:auto;padding:125px 0 80px}
+  .hero-panel{max-width:680px}
+  .project-grid{grid-template-columns:1fr 1fr}.project.featured{grid-column:span 2}
+  .skill-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .container{width:min(100% - 28px,var(--max))}
+  section{padding:78px 0}
+  .nav-links{
+    display:none;position:absolute;top:64px;right:14px;flex-direction:column;align-items:stretch;
+    width:210px;padding:15px;background:#09101d;border:1px solid var(--line);border-radius:14px
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .nav-cta{display:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .project-grid,.skill-grid{grid-template-columns:1fr}.project.featured{grid-column:auto}
+  .cert{grid-template-columns:1fr;text-align:center}.cert-badge{margin:auto}
+  .cert-tags,.ai-badges{justify-content:center}
+  .contact-items{grid-template-columns:1fr}
+  .job-head{flex-direction:column}.date{white-space:normal}
+  .footer-inner{flex-direction:column}
+}
+@media(max-width:480px){
+  .hero h1{font-size:44px}.hero-actions .btn{width:100%}
+  .stats{grid-template-columns:1fr}
+  .hero-proof{justify-content:center}
+  .arch{grid-template-columns:1fr}
+  .ai-wrap{padding:22px}.ai-flow{grid-template-columns:1fr}
+  .flow-row{grid-template-columns:1fr}.flow-arrow{transform:rotate(90deg)}
 }
 
-@media (max-width: 500px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 }
 
-/* ========== EXPERIENCE & PROJECTS ========== */
-@media (max-width: 600px) {
-    .card {
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-}
-
-/* ========== SKILLS SECTION ========== */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .logo-track img {
-        width: 45px;
-    }
-}
-
-/* ========== CONTACT SECTION ========== */
-@media (max-width: 600px) {
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* ========== EXTRA SMALL DEVICES ========== */
-@media (max-width: 400px) {
-    body {
-        font-size: 14px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-        /* HAMBURGER */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #38bdf8;
-}
-
-/* MOBILE NAV */
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-container {
-        position: relative;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: -100%;
-        width: 220px;
-        flex-direction: column;
-        background: #020617;
-        padding: 20px;
-        transition: 0.3s;
-        border-radius: 10px;
-    }
-
-    .nav-links.active {
-        right: 10px;
-    }
-}
-
-        /* ========== CERTIFICATION ========== */
-        .certification-section {padding-top: 30px;}
-        .section-heading {margin-bottom: 25px;}
-        .section-eyebrow {font-size: 11px;letter-spacing: 2px;color:#a855f7;font-weight:700;}
-        .section-heading h2 {margin: 8px 0 8px;}
-        .section-heading p {color:#94a3b8;max-width:720px;line-height:1.6;margin:0;}
-
-        .certification-card {
-            position:relative;
-            display:grid;
-            grid-template-columns:280px 1fr;
-            gap:35px;
-            align-items:center;
-            overflow:hidden;
-            padding:35px;
-            border-radius:22px;
-            border:1px solid rgba(56,189,248,.25);
-            background:
-                radial-gradient(circle at 12% 50%, rgba(56,189,248,.12), transparent 30%),
-                radial-gradient(circle at 90% 20%, rgba(168,85,247,.13), transparent 32%),
-                linear-gradient(145deg, rgba(15,23,42,.98), rgba(2,6,23,.98));
-            box-shadow:0 20px 60px rgba(0,0,0,.28);
-        }
-        .certification-card::before {
-            content:"";
-            position:absolute;
-            inset:0;
-            border-radius:22px;
-            padding:1px;
-            background:linear-gradient(120deg,rgba(56,189,248,.55),transparent 45%,rgba(168,85,247,.45));
-            -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-            -webkit-mask-composite:xor;
-            mask-composite:exclude;
-            pointer-events:none;
-        }
-        .cert-badge-wrap {position:relative;display:flex;justify-content:center;align-items:center;min-height:240px;}
-        .cert-glow {
-            position:absolute;width:210px;height:210px;border-radius:50%;
-            background:radial-gradient(circle,rgba(56,189,248,.25),transparent 68%);
-            filter:blur(8px);
-        }
-        .cert-badge {
-            position:relative;width:210px;height:210px;object-fit:contain;
-            filter:drop-shadow(0 15px 22px rgba(0,0,0,.4));
-            transition:transform .35s ease,filter .35s ease;
-        }
-        .certification-card:hover .cert-badge {
-            transform:translateY(-7px) rotate(2deg);
-            filter:drop-shadow(0 20px 28px rgba(56,189,248,.2));
-        }
-        .cert-content h3 {font-size:30px;margin:12px 0 5px;color:#f8fafc;}
-        .cert-provider {color:#38bdf8;font-weight:600;margin:0 0 15px;}
-        .cert-content > p:not(.cert-provider) {color:#94a3b8;line-height:1.7;max-width:720px;}
-        .verified-pill {
-            display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;
-            background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);
-            color:#86efac;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
-        }
-        .verified-dot {width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px rgba(74,222,128,.8);}
-        .cert-highlights {display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 24px;}
-        .cert-highlights span {
-            padding:8px 11px;border-radius:8px;background:rgba(255,255,255,.04);
-            border:1px solid rgba(255,255,255,.07);color:#cbd5e1;font-size:12px;
-        }
-        .cert-btn {
-            background:linear-gradient(90deg,#38bdf8,#a855f7);
-            color:#020617;font-weight:800;border:none;
-            box-shadow:0 8px 24px rgba(56,189,248,.16);
-            transition:transform .25s ease,box-shadow .25s ease;
-        }
-        .cert-btn:hover {transform:translateY(-2px);box-shadow:0 12px 28px rgba(168,85,247,.22);}
-
-        @media(max-width:700px) {
-            .certification-card {grid-template-columns:1fr;text-align:center;padding:28px 20px;gap:10px;}
-            .cert-badge-wrap {min-height:200px;}
-            .cert-badge {width:175px;height:175px;}
-            .cert-content h3 {font-size:24px;}
-            .cert-highlights {justify-content:center;}
-            .cert-btn {width:auto;display:inline-block;}
-        }
-
-
-        /* ========== HERO CERTIFICATION HIGHLIGHT ========== */
-        .hero-actions {display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-        .hero-certification {
-            display:inline-flex;
-            align-items:center;
-            gap:12px;
-            margin:18px 0 2px;
-            padding:9px 14px 9px 9px;
-            border-radius:14px;
-            text-decoration:none;
-            color:#e2e8f0;
-            background:linear-gradient(135deg,rgba(56,189,248,.11),rgba(168,85,247,.11));
-            border:1px solid rgba(56,189,248,.32);
-            box-shadow:0 8px 28px rgba(0,0,0,.18);
-            transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-        }
-        .hero-certification:hover {
-            transform:translateY(-3px);
-            border-color:rgba(56,189,248,.7);
-            box-shadow:0 12px 32px rgba(56,189,248,.12);
-        }
-        .hero-certification img {
-            width:58px;
-            height:58px;
-            object-fit:contain;
-            flex:0 0 58px;
-        }
-        .hero-certification span {display:flex;flex-direction:column;gap:3px;text-align:left;}
-        .hero-certification strong {font-size:13px;color:#f8fafc;}
-        .hero-certification small {font-size:11px;color:#38bdf8;}
-
-        /* Give the certification section more visual priority when reached. */
-        #certification {scroll-margin-top:85px;}
-        .certification-section {margin-top:30px;margin-bottom:65px;}
-        .certification-section .section-heading h2 {font-size:30px;}
-
-        @media(max-width:900px) {
-            .hero-certification {margin-left:auto;margin-right:auto;}
-            .hero-actions {justify-content:center;}
-        }
-        @media(max-width:480px) {
-            .hero-certification {width:100%;justify-content:center;}
-            .hero-certification img {width:52px;height:52px;flex-basis:52px;}
-            .hero-certification strong {font-size:12px;}
-            .hero-certification small {font-size:10px;}
-        }
-
-    </style>
+/* PROFILE PHOTO — enabled automatically when a real photo is added */
+.profile-photo-wrap{display:none;align-items:center;gap:14px;margin-top:20px}
+.profile-photo{width:62px;height:62px;border-radius:18px;object-fit:cover;border:1px solid rgba(56,189,248,.28);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.profile-photo-note{font-size:12px;color:#8292aa}
+</style>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <b>Dhruv Shah</b>
-            <div class="menu-toggle" id="menuToggle">☰</div> 
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#certification" class="nav-link">Certification</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Dhruv Shah</h1>
-            <h3>Claude Certified Architect – Foundation | AI Solutions Engineer | Sr. .NET Full Stack Developer</h3>
-            <p>Building scalable, secure, and AI-powered applications that solve real-world business challenges.</p>
 
-            <a href="#certification" class="hero-certification" aria-label="Claude Certified Architect – Foundation">
-                <img src="claude-certified-architect-foundations.png"
-                     alt="Claude Certified Architect – Foundation badge">
-                <span>
-                    <strong>Claude Certified Architect – Foundation</strong>
-                    <small>Verified Professional Credential · View Certificate ↗</small>
-                </span>
-            </a>
-
-            <div class="hero-actions">
-                <a href="DhruvShah_Resume.pdf" class="btn primary">View Resume</a>
-            <a href="https://linkedin.com/in/dhruvshah0905" class="btn secondary">LinkedIn</a>
-            </div>
-        </div>
-
-        <div class="hero-img">
-            <img src="DhruvShah.jpeg" alt="Dhruv Shah - AI Solutions Engineer and .NET Full Stack Developer">
-        </div>
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">DS</span> Dhruv Shah</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#ai">AI Focus</a>
+      <a href="#skills">Skills</a>
+      <a href="#certification">Certification</a>
+      <a href="#contact" class="nav-cta">Let's Connect</a>
     </div>
-    <section id="about">
-        <div class="about-container">
-            <div class="about-left">
-                <h2>Professional Summary</h2>
-                <div class="card">
-                    <p>I'm a <strong>Claude Certified Architect – Foundation</strong> and a .NET Full Stack Developer passionate
-                    about designing and building AI-powered applications that solve real-world business challenges.</p>
+  </div>
+</nav>
 
-                    <p>With over 5 years of experience in software development, I specialize in building scalable, secure,
-                    and high-performance applications using <strong>ASP.NET Core, ASP.NET MVC, C#, Entity Framework Core,
-                    SQL Server, and RESTful APIs</strong>. My frontend experience includes HTML, CSS, JavaScript, jQuery,
-                    and modern web development practices.</p>
+<main id="top">
 
-                    <p>As a Claude Certified Architect – Foundation, I have demonstrated foundational expertise in applying
-                    Claude and AI concepts to real-world scenarios and designing practical AI-driven solutions. I enjoy
-                    exploring <strong>Agentic AI, LLM-powered applications, AI automation, and intelligent enterprise
-                    solutions</strong>.</p>
-
-                    <p>I believe in continuous learning, embracing emerging technologies, and building impactful software
-                    that delivers measurable value.</p>
-                </div>
-            </div>
-            <div class="about-right">
-                <div class="stats-grid">
-                    <div class="stat">
-                        <h1>5+</h1>
-                        <p>Years Experience</p>
-                    </div>
-
-                    <div class="stat">
-                        <h1>15+</h1>
-                        <p>Projects</p>
-                    </div>
-
-                    <div class="stat">
-                        <h1>10+</h1>
-                        <p>Technologies</p>
-                    </div>
-
-                    <div class="stat">
-                        <h1>100%</h1>
-                        <p>Client Satisfaction</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-<section id="certification" class="certification-section">
-        <div class="section-heading">
-            <span class="section-eyebrow">PROFESSIONAL CREDENTIAL</span>
-            <h2>Claude Certified Architect</h2>
-            <p>Verified certification demonstrating foundational knowledge of architecting AI-powered solutions with Claude.</p>
-        </div>
-
-        <div class="certification-card">
-            <div class="cert-badge-wrap">
-                <div class="cert-glow"></div>
-                <img src="claude-certified-architect-foundations.png" alt="Claude Certified Architect – Foundation badge" class="cert-badge">
-            </div>
-
-            <div class="cert-content">
-                <div class="verified-pill">
-                    <span class="verified-dot"></span>
-                    Verified Credential
-                </div>
-                <h3>Claude Certified Architect – Foundation</h3>
-                <p class="cert-provider">Anthropic • Credly</p>
-                <p>
-                    A professional credential recognizing foundational capability in Claude-based AI solution architecture,
-                    AI-assisted development, and practical application of Claude in real-world solution design.
-                </p>
-
-                <div class="cert-highlights">
-                    <span>✓ AI Solution Architecture</span>
-                    <span>✓ Claude & LLM Concepts</span>
-                    <span>✓ Agentic AI</span>
-                    <span>✓ AI-Powered Applications</span>
-                </div>
-
-                <a class="btn cert-btn"
-                   href="https://www.credly.com/badges/3bae78f6-0830-4ba3-9d5a-1b33cdf3dc1c/public_url"
-                   target="_blank" rel="noopener noreferrer">
-                    View Verified Certificate ↗
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="card">
-    <h3>TOPS Infosolutions Pvt Ltd — Sr. .NET Developer</h3>
-    <p class="sub-text">Ahmedabad | June 2026 - Present</p>
-
-    <ul>
-        <li>Developing scalable enterprise applications using ASP.NET Core, .NET, C#, MVC, Web API, and SQL Server</li>
-        <li>Designing and enhancing HRMS, administration, dashboard, and business management solutions based on evolving business requirements</li>
-        <li>Building secure and responsive web applications with a focus on performance, maintainability, and user experience</li>
-        <li>Working on database design, stored procedures, query optimization, and data-driven application development using SQL Server</li>
-        <li>Developing and deploying applications on IIS with .NET 8 and supporting production/UAT environments</li>
-        <li>Integrating AI-assisted development practices and modern AI technologies to improve development productivity and solution design</li>
-        <li>Working with Claude AI, ChatGPT, and prompt engineering techniques for application development, debugging, documentation, and automation</li>
-        <li>Contributing to end-to-end software development including requirement analysis, development, testing, deployment, and maintenance</li>
-    </ul>
-</div>
-        <div class="card">
-            <h3>Welspun GCC — Senior Officer (Applications)</h3>
-            <p class="sub-text">Ahmedabad | April 2025 - June 2026</p>
-
-            <ul>
-                <li>Created, tested, and debugged applications while ensuring adherence to clean coding practices</li>
-                <li>Led end-to-end development of Visitor Management System (VMS)</li>
-                <li>Designed SQL Server database architecture</li>
-                <li>Built CI/CD pipeline reducing deployment time</li>
-                <li>Rolled out VMS across multiple systems improving efficiency</li>
-                <li>Used AI tools (ChatGPT, Claude) to accelerate development</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Vagaro Technologies — Software Engineer</h3>
-            <p class="sub-text">Ahmedabad | Sept 2023 - Feb 2025</p>
-
-            <ul>
-                <li>Developed scalable applications using ASP.NET Core, MVC, Web APIs</li>
-                <li>Implemented authentication using JWT, OAuth, IdentityServer</li>
-                <li>Optimized SQL Server & MongoDB performance</li>
-                <li>Integrated payment gateways (Adyen, PayPal, Stripe)</li>
-                <li>Improved API response time and system efficiency</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>CJK KnowledgeWorks — Junior Developer</h3>
-            <p class="sub-text">Mumbai | Nov 2022 - Sept 2023</p>
-
-            <ul>
-                <li>Developed web applications using ASP.NET Core and Angular</li>
-                <li>Collaborated with clients for requirement gathering</li>
-                <li>Enhanced system performance based on business needs</li>
-                <li>Resolved defects ensuring application stability</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Datamatics — .NET Developer</h3>
-            <p class="sub-text">Mumbai | July 2021 - Oct 2022</p>
-
-            <ul>
-                <li>Developed applications using ASP.NET and VB.NET</li>
-                <li>Designed SQL Server & MongoDB database objects</li>
-                <li>Configured IIS server for deployment</li>
-            </ul>
-        </div>
-
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Visitor Management System</h3>
-                <span class="tech">Tech: .NET MVC, Web API, SQL, Azure</span>
-
-                <ul>
-                    <li>Designed scalable multi-location architecture</li>
-                    <li>Optimized SQL Server performance and API response time</li>
-                    <li>Implemented check-in, badge generation & workflows</li>
-                    <li>Enabled real-time tracking system</li>
-                    <li>Improved security and operational efficiency</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>PayPro Mini</h3>
-                <span class="tech">Tech: .NET Core, SignalR, MongoDB, Angular</span>
-
-                <ul>
-                    <li>Developed device-based application</li>
-                    <li>Implemented real-time sync using SignalR</li>
-                    <li>Optimized performance for hardware usage</li>
-                    <li>Delivered smooth and responsive system</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Adyen Payment Integration</h3>
-                <span class="tech">Tech: .NET Core, Payment APIs, Azure</span>
-                <ul>
-                    <li>Integrated Adyen payment gateway</li>
-                    <li>Enabled card & digital payments</li>
-                    <li>Optimized API calls and error handling</li>
-                    <li>Improved transaction efficiency</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-<section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="logo-slider">
-            <div class="logo-track">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" title=".NET">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" title="C#">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" title="Angular">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" title="MongoDB">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="SQL">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" title="Azure">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" title="GitHub">
-
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
-
-            </div>
-        </div>        
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>⚙️ Backend Development</h3>
-                <div class="skill">
-                    <span>C#</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>.NET Core</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>Web API</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>LINQ & EF</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-            </div>            
-            <div class="skill-card">
-                <h3>🎨 Frontend Development</h3>
-                <div class="skill">
-                    <span>Angular</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>JavaScript</span>
-                    <div class="bar"><div style="width:80%"></div></div>
-                </div>
-
-                <div class="skill">
-                    <span>HTML & CSS</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>🗄️ Database & Data</h3>
-                <div class="skill">
-                    <span>SQL Server</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>MongoDB</span>
-                    <div class="bar"><div style="width:80%"></div></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>☁️ Cloud & DevOps</h3>
-                <div class="skill">
-                    <span>Azure</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>CI/CD</span>
-                    <div class="bar"><div style="width:80%"></div></div>
-                </div>
-            </div>            
-            <div class="skill-card">
-                <h3>🛠️ Tools & AI</h3>
-                 <div class="skill">
-        <span>Claude AI</span>
-        <div class="bar"><div style="width:100%"></div></div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="availability"><span class="dot"></span> Building enterprise software + exploring AI engineering</span>
+      <h1>Dhruv <span class="gradient">Shah.</span></h1>
+      <div class="hero-role">Senior .NET Full Stack Developer · AI Solutions Engineer</div>
+      <p class="hero-copy">
+        5+ years of experience building scalable enterprise applications with C#, ASP.NET Core,
+        Web APIs, SQL Server and modern web technologies — now extending that foundation into
+        AI-powered application development.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="DhruvShah_Resume.pdf">View Resume ↗</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/dhruvshah0905" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="#projects">Explore Work ↓</a>
+      </div>
+      <div class="hero-proof">
+        <span class="pill">C# / .NET</span>
+        <span class="pill">ASP.NET Core</span>
+        <span class="pill">SQL Server</span>
+        <span class="pill">Angular</span>
+        <span class="pill">Azure</span>
+        <span class="pill">Claude / AI</span>
+      </div>
     </div>
 
-    <div class="skill">
-        <span>Prompt Engineering</span>
-        <div class="bar"><div style="width:100%"></div></div>
+          <!-- Add your professional headshot as profile-photo.jpg and change display:none to display:flex
+           in .profile-photo-wrap when the image is available. -->
+      <div class="profile-photo-wrap" aria-label="Profile photo">
+        <img class="profile-photo" src="profile-photo.jpg" alt="Dhruv Shah">
+        <div class="profile-photo-note">Dhruv Shah · .NET Full Stack & AI</div>
+      </div>
+
+    <div class="hero-panel reveal">
+      <div class="panel-top">
+        <div class="terminal-dots"><span></span><span></span><span></span></div>
+        <div class="panel-label">engineering-profile.cs</div>
+      </div>
+      <div class="code">
+<span class="k">public</span> <span class="k">class</span> <span class="p">Engineer</span>
+{
+  <span class="k">public string</span> Backend =&gt; <span class="s">".NET / C# / APIs"</span>;
+  <span class="k">public string</span> Data    =&gt; <span class="s">"SQL / MongoDB"</span>;
+  <span class="k">public string</span> Frontend =&gt; <span class="s">"Angular / TypeScript"</span>;
+  <span class="k">public string</span> Cloud   =&gt; <span class="s">"Azure / CI-CD"</span>;
+  <span class="k">public string</span> AI      =&gt; <span class="s">"LLMs / RAG / Agents"</span>;
+}
+      </div>
+      <div class="arch">
+        <div class="arch-item"><small>Experience</small><strong>5.2+ Years</strong></div>
+        <div class="arch-item"><small>Primary</small><strong>Enterprise .NET</strong></div>
+        <div class="arch-item"><small>Current Focus</small><strong>AI Applications</strong></div>
+        <div class="arch-item"><small>Credential</small><strong>Claude Certified</strong></div>
+      </div>
     </div>
-                <div class="skill">
-                    <span>Git & GitHub</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>ChatGPT & AI Tools</span>
-                    <div class="bar"><div style="width:85%"></div></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>🤝 Soft Skills</h3>
-                <div class="skill">
-                    <span>Problem Solving</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>Team Collaboration</span>
-                    <div class="bar"><div style="width:90%"></div></div>
-                </div>
-                <div class="skill">
-                    <span>Communication</span>
-                    <div class="bar"><div style="width:100%"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <br />
-    <br />
-    <section id="contact">
-        <h2>Let's Connect</h2>
-        <p class="contact-desc">
-            I'm always interested in hearing about new projects and opportunities.
-            Feel free to reach out!
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Profile</span>
+      <h2>Engineering experience with an AI-forward direction.</h2>
+      <p>I build business software first — then use modern AI where it can make that software more useful, intelligent and efficient.</p>
+    </div>
+
+    <div class="about-grid">
+      <article class="card reveal">
+        <p>
+          I'm a <strong>Senior .NET Full Stack Developer</strong> with 5+ years of professional experience
+          across enterprise applications, APIs, databases, authentication, payment integrations,
+          deployment and business workflows.
         </p>
-        <div class="contact-items">
-            <div class="contact-item">
-                <div class="icon">📱</div>
-                <div>
-                    <h3>Mobile</h3>
-                    <p>+91 8291733115</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="icon">✉️</div>
-                <div>
-                    <h3>Email</h3>
-                    <p>0905.dhruvshah@gmail.com</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="icon">📍</div>
-                <div>
-                    <h3>Location</h3>
-                    <p>Ahmedabad, Gujarat, India</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="icon">💼</div>
-                <div>
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://linkedin.com/in/dhruvshah0905" target="_blank">linkedin.com/in/dhruvshah0905</a></p>
-                </div>
-            </div>
+        <p>
+          My core strength is translating business requirements into maintainable software using
+          <strong>C#, ASP.NET Core/MVC, Web API, Entity Framework, SQL Server and web technologies</strong>.
+          I've also worked with MongoDB, Angular, Azure, IIS and CI/CD practices.
+        </p>
+        <p>
+          My current growth path is <strong>AI application engineering</strong>: understanding how LLMs,
+          retrieval, tool calling and agentic workflows can be integrated into real enterprise systems.
+        </p>
+      </article>
+
+      <div class="focus-list reveal">
+        <div class="focus"><div class="focus-icon">01</div><div><strong>Backend Engineering</strong><small>APIs, business logic, authentication, data access and performance.</small></div></div>
+        <div class="focus"><div class="focus-icon">02</div><div><strong>Full Stack Delivery</strong><small>End-to-end application development with Angular and .NET.</small></div></div>
+        <div class="focus"><div class="focus-icon">03</div><div><strong>Enterprise Systems</strong><small>Workflow-heavy applications, integrations, dashboards and multi-location systems.</small></div></div>
+        <div class="focus"><div class="focus-icon">04</div><div><strong>AI Application Engineering</strong><small>Moving from AI-assisted development toward practical LLM-powered products.</small></div></div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><strong>5.2+</strong><span>Years professional experience</span></div>
+      <div class="stat"><strong>15+</strong><span>Projects / solutions worked on</span></div>
+      <div class="stat"><strong>.NET</strong><span>Primary engineering ecosystem</span></div>
+      <div class="stat"><strong>AI</strong><span>Current specialization direction</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Experience</span>
+      <h2>A progression from .NET development to enterprise ownership.</h2>
+      <p>Selected responsibilities and engineering work from my professional journey.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="job reveal">
+        <span class="job-dot"></span>
+        <div class="card">
+          <div class="job-head"><div><div class="job-title">Sr. .NET Developer <span class="company">· TOPS Infosolutions Pvt Ltd</span></div><div class="company">Ahmedabad</div></div><span class="date">Jun 2026 – Present</span></div>
+          <ul>
+            <li>Worked with the team on <strong>Amazon Marketing Cloud (AMC)</strong> use cases, helping design and troubleshoot complex SQL queries for audience generation and related marketing requirements.</li>
+            <li>Analyzed audience definitions and translated business requirements into AMC-compatible query logic, including complex filters, purchase/view behaviour and audience conditions.</li>
+            <li>Developed a <strong>Service Dashboard</strong> to centralize application and client information, including application-wise service details and user access visibility.</li>
+            <li>Worked across the existing .NET ecosystem for application development, database-related tasks, debugging and internal tooling.</li>
+          </ul>
         </div>
-    </section>
-    <br />
-    <br />
-    <script>
-        const cards = document.querySelectorAll('.card');
-        window.addEventListener('scroll', () => {
-            cards.forEach(card => {
-                const top = card.getBoundingClientRect().top;
-                if (top < window.innerHeight - 80) {
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-                }
-            });
-        });
-    </script>
-    <script>
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-link");
+      </article>
 
-        window.addEventListener("scroll", () => {
-            let current = "";
+      <article class="job reveal">
+        <span class="job-dot"></span>
+        <div class="card">
+          <div class="job-head"><div><div class="job-title">Senior Officer (Applications) <span class="company">· Welspun GCC</span></div><div class="company">Ahmedabad</div></div><span class="date">Apr 2025 – Jun 2026</span></div>
+          <ul>
+            <li>Led end-to-end development of a Visitor Management System with multi-location requirements and business workflows.</li>
+            <li>Designed SQL Server database architecture and optimized data access for application workflows.</li>
+            <li>Built and supported CI/CD deployment practices and application rollouts across multiple systems.</li>
+            <li>Worked across requirements, development, testing, deployment and production/UAT support.</li>
+          </ul>
+        </div>
+      </article>
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
-            });
+      <article class="job reveal">
+        <span class="job-dot"></span>
+        <div class="card">
+          <div class="job-head"><div><div class="job-title">Software Engineer <span class="company">· Vagaro Technologies</span></div><div class="company">Ahmedabad</div></div><span class="date">Sep 2023 – Feb 2025</span></div>
+          <ul>
+            <li>Developed scalable applications using ASP.NET Core, MVC and Web APIs.</li>
+            <li>Implemented authentication and authorization using JWT, OAuth and IdentityServer.</li>
+            <li>Worked with SQL Server and MongoDB for application data and performance improvements.</li>
+            <li>Integrated payment platforms including Adyen, PayPal and Stripe.</li>
+          </ul>
+        </div>
+      </article>
 
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === "#" + current) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-    <script>
-    const toggle = document.getElementById("menuToggle");
-    const navLinks = document.querySelector(".nav-links");
+      <article class="job reveal">
+        <span class="job-dot"></span>
+        <div class="card">
+          <div class="job-head"><div><div class="job-title">Junior Developer <span class="company">· CJK KnowledgeWorks</span></div><div class="company">Mumbai</div></div><span class="date">Nov 2022 – Sep 2023</span></div>
+          <ul>
+            <li>Developed web applications using ASP.NET Core and Angular.</li>
+            <li>Collaborated on requirement gathering, defect resolution and performance improvements.</li>
+          </ul>
+        </div>
+      </article>
 
-    toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+      <article class="job reveal">
+        <span class="job-dot"></span>
+        <div class="card">
+          <div class="job-head"><div><div class="job-title">.NET Developer <span class="company">· Datamatics</span></div><div class="company">Mumbai</div></div><span class="date">Jul 2021 – Oct 2022</span></div>
+          <ul>
+            <li>Developed applications using ASP.NET and VB.NET.</li>
+            <li>Designed SQL Server and MongoDB database objects and supported IIS deployments.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Selected Work</span>
+      <h2>Enterprise projects that show how I build.</h2>
+      <p>Real project experience first. AI portfolio work will be added as I turn the current learning direction into production-style implementations.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="card project featured reveal">
+        <span class="project-number">01 · ENTERPRISE</span>
+        <h3>Visitor Management System</h3>
+        <p>A multi-location visitor management platform covering appointments, approvals, check-in/out, badge/pass workflows, dashboards and operational tracking.</p>
+        <div class="tags"><span class="tag">ASP.NET MVC</span><span class="tag">Web API</span><span class="tag">C#</span><span class="tag">SQL Server</span><span class="tag">Azure</span><span class="tag">CI/CD</span></div>
+        <ul style="color:var(--muted);font-size:13px;padding-left:18px">
+          <li>Designed application workflows for multiple locations and business scenarios.</li>
+          <li>Worked on database architecture, stored procedures and performance-sensitive queries.</li>
+          <li>Supported deployment and iterative feature delivery across environments.</li>
+        </ul>
+        <div class="project-footer"><span>Enterprise application</span><span>Architecture · Data · Delivery</span></div>
+        <div class="project-glow"></div>
+      </article>
+
+      <article class="card project reveal">
+        <span class="project-number">02 · FULL STACK</span>
+        <h3>PayPro Mini</h3>
+        <p>Device-oriented application focused on responsive workflows, real-time synchronization and efficient application behaviour.</p>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">Angular</span><span class="tag">MongoDB</span><span class="tag">SignalR</span></div>
+        <div class="project-footer"><span>Real-time systems</span><span>Full Stack</span></div>
+        <div class="project-glow"></div>
+      </article>
+
+      <article class="card project reveal">
+        <span class="project-number">03 · INTEGRATION</span>
+        <h3>Adyen Payment Integration</h3>
+        <p>Payment integration work involving API communication, transaction flows, error handling and secure application integration.</p>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">Payment APIs</span><span class="tag">Azure</span></div>
+        <div class="project-footer"><span>Payments</span><span>API Integration</span></div>
+        <div class="project-glow"></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="container">
+    <div class="ai-wrap reveal">
+      <div class="ai-grid">
+        <div class="ai-copy">
+          <span class="section-kicker">AI Direction</span>
+          <h2 style="margin-top:12px">From AI-assisted coding to AI-powered software.</h2>
+          <p>
+            My AI focus is not to leave software engineering behind. It is to combine my existing
+            enterprise .NET experience with LLMs, retrieval, tool calling and agentic workflows.
+          </p>
+          <div class="ai-badges">
+            <span class="tag">LLM Applications</span><span class="tag">RAG</span><span class="tag">Embeddings</span>
+            <span class="tag">AI Agents</span><span class="tag">Tool Calling</span><span class="tag">MCP</span>
+          </div>
+        </div>
+        <div class="ai-flow">
+          <div class="flow-row">
+            <div class="flow-box">Business Data<small>SQL / APIs / Docs</small></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">AI Layer<small>LLM / RAG / Agent</small></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">Application<small>Angular + .NET</small></div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-box">Secure Tools<small>Controlled actions</small></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">MCP / Tool Calling<small>System integration</small></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">Human Outcome<small>Useful business result</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Technical Stack</span>
+      <h2>Depth where it matters. No artificial 100% ratings.</h2>
+      <p>Skill groupings are intentionally capability-based instead of presenting subjective percentages as measurable facts.</p>
+    </div>
+
+    <div class="skill-grid">
+      <article class="card skill-card reveal">
+        <h3>⚙️ Backend Engineering</h3>
+        <div class="skill-line"><div class="skill-top"><span>C#</span><span>Advanced</span></div><div class="skill-level"><span style="--w:92%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>ASP.NET Core / MVC</span><span>Advanced</span></div><div class="skill-level"><span style="--w:92%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Web API / REST</span><span>Advanced</span></div><div class="skill-level"><span style="--w:88%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>EF Core / LINQ</span><span>Advanced</span></div><div class="skill-level"><span style="--w:87%"></span></div></div>
+      </article>
+
+      <article class="card skill-card reveal">
+        <h3>🎨 Frontend</h3>
+        <div class="skill-line"><div class="skill-top"><span>HTML / CSS</span><span>Strong</span></div><div class="skill-level"><span style="--w:86%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>JavaScript / jQuery</span><span>Strong</span></div><div class="skill-level"><span style="--w:82%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Angular</span><span>Developing</span></div><div class="skill-level"><span style="--w:65%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>TypeScript</span><span>Developing</span></div><div class="skill-level"><span style="--w:62%"></span></div></div>
+      </article>
+
+      <article class="card skill-card reveal">
+        <h3>🗄️ Data</h3>
+        <div class="skill-line"><div class="skill-top"><span>SQL Server</span><span>Advanced</span></div><div class="skill-level"><span style="--w:90%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Stored Procedures</span><span>Advanced</span></div><div class="skill-level"><span style="--w:88%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>MongoDB</span><span>Working</span></div><div class="skill-level"><span style="--w:72%"></span></div></div>
+      </article>
+
+      <article class="card skill-card reveal">
+        <h3>☁️ Cloud & Delivery</h3>
+        <div class="skill-line"><div class="skill-top"><span>Azure</span><span>Working</span></div><div class="skill-level"><span style="--w:72%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>IIS / Deployment</span><span>Strong</span></div><div class="skill-level"><span style="--w:84%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>CI/CD</span><span>Working</span></div><div class="skill-level"><span style="--w:76%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Git / GitHub</span><span>Strong</span></div><div class="skill-level"><span style="--w:85%"></span></div></div>
+      </article>
+
+      <article class="card skill-card reveal">
+        <h3>🤖 AI Engineering</h3>
+        <div class="skill-line"><div class="skill-top"><span>Claude / AI-assisted development</span><span>Strong</span></div><div class="skill-level"><span style="--w:82%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Prompt Engineering</span><span>Strong</span></div><div class="skill-level"><span style="--w:82%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>AI Architecture</span><span>Foundation</span></div><div class="skill-level"><span style="--w:62%"></span></div></div>
+      </article>
+
+      <article class="card skill-card reveal">
+        <h3>🏗️ Engineering Practices</h3>
+        <div class="skill-line"><div class="skill-top"><span>Authentication / Authorization</span><span>Strong</span></div><div class="skill-level"><span style="--w:84%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>API Integration</span><span>Advanced</span></div><div class="skill-level"><span style="--w:87%"></span></div></div>
+        <div class="skill-line"><div class="skill-top"><span>Debugging / Problem Solving</span><span>Advanced</span></div><div class="skill-level"><span style="--w:90%"></span></div></div>
+      </article>
+    </div>
+    <div class="note reveal">The bars are visual indicators for portfolio presentation, not formal proficiency measurements.</div>
+  </div>
+</section>
+
+<section id="certification">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Credential</span>
+      <h2>Claude Certified Architect – Foundation</h2>
+      <p>A professional credential that complements my software-engineering background and current AI application focus.</p>
+    </div>
+
+    <div class="cert reveal">
+      <img class="cert-badge" src="claude-certified-architect-foundations.png" alt="Claude Certified Architect – Foundation badge">
+      <div>
+        <span class="verified">● Verified credential</span>
+        <h3>Claude Certified Architect – Foundation</h3>
+        <div class="cert-provider">Anthropic · Credly</div>
+        <p>Foundational credential covering Claude-oriented AI solution architecture and practical AI solution design.</p>
+        <div class="cert-tags">
+          <span class="tag">AI Solution Architecture</span><span class="tag">Claude & LLM Concepts</span>
+          <span class="tag">Agentic AI</span><span class="tag">AI-powered Applications</span>
+        </div>
+        <a class="btn btn-primary" href="https://www.credly.com/badges/3bae78f6-0830-4ba3-9d5a-1b33cdf3dc1c/public_url" target="_blank" rel="noopener">View Verified Credential ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-kicker">Contact</span>
+      <h2>Let's build something useful.</h2>
+      <p>Open to conversations around .NET engineering, full-stack development and AI-powered enterprise applications.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-items reveal">
+        <div class="contact-item"><small>Email</small><strong><a href="mailto:0905.dhruvshah@gmail.com">0905.dhruvshah@gmail.com</a></strong></div>
+        <div class="contact-item"><small>Phone</small><strong>+91 8291733115</strong></div>
+        <div class="contact-item"><small>Location</small><strong>Ahmedabad, Gujarat, India</strong></div>
+        <div class="contact-item"><small>LinkedIn</small><strong><a href="https://linkedin.com/in/dhruvshah0905" target="_blank" rel="noopener">linkedin.com/in/dhruvshah0905 ↗</a></strong></div>
+      </div>
+
+      <div class="card cta reveal">
+        <div>
+          <span class="section-kicker">Open to Opportunities</span>
+          <h3 style="font-size:28px;margin:14px 0">Let's discuss .NET, full-stack or AI application engineering.</h3>
+          <p>Available for conversations around software engineering opportunities, enterprise applications and AI-enabled product development.</p>
+        </div>
+        <div><a class="btn btn-primary" href="mailto:0905.dhruvshah@gmail.com?subject=Portfolio%20Opportunity">Contact Me ↗</a></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Dhruv Shah. Built with HTML, CSS & JavaScript.</span>
+    <span>Senior .NET Full Stack Developer · AI Solutions Engineer</span>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('navbar');
+const toggle = document.getElementById('menuToggle');
+const links = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, {passive:true});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const sections = [...document.querySelectorAll('main section')];
+const navLinks = [...document.querySelectorAll('.nav-links a')];
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+    }
+  });
+}, {rootMargin:'-30% 0px -60% 0px', threshold:0});
+
+sections.forEach(s => sectionObserver.observe(s));
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
